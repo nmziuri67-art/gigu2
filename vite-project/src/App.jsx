@@ -1,13 +1,20 @@
 import { CORE_CONCEPTS } from "./data";
-import CoreConcept from "./components/CoreConcept";
+import CoreConcept from "./components/CoreConcepts";
 import Header from "./components/Header";
 import TabButton from "./components/TabButton";
 
+
+import { usestate } from "react";
+
 function App() {
-  let selectedTopic = "Please Choose A Topic";
+  //let selectedTopic = "Please Choose A Topic";
+
+  const [selectedTopic, setSelectedTopic] = usestate("please select topic...");
+
+
 
   function handleClick(value) {
-    selectedTopic = value;
+   setSelectedTopic(value);
     console.log(selectedTopic);
   }
 
